@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order confirmed — Vayan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="images/logo/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .confirm { max-width: 560px; margin: 120px auto; text-align: center; padding: 0 24px; }
+  .confirm h1 { font-size: 32px; margin-bottom: 16px; }
+  .confirm p { color: var(--slate); }
+</style>
+<script>
+  // Clear the cart once the order actually succeeded.
+  try { localStorage.removeItem('tc_cart_v1'); } catch (e) {}
+</script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-row">
+      <a href="/" class="brand-logo" aria-label="Vayan home">
+        <img src="images/logo/vayan-mark-gold.png" alt="" class="brand-mark">
+        <img src="images/logo/vayan-wordmark-gold.png" alt="Vayan" class="brand-wordmark">
+      </a>
+    </div>
+  </header>
+  <div class="confirm">
+    <h1>Thank you — your order is in.</h1>
+    <p>We'll email you a confirmation with tracking details once your shirt ships. Handmade pieces are made in small batches, so please allow a few extra days.</p>
+    <p><a href="/">&larr; Back to the shop</a></p>
+  </div>
+</body>
+</html>

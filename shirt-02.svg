@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
+  <rect width="400" height="500" fill="#2B2B2B"/>
+  <path d="M 120 60 L 200 120 L 280 60 L 280 40 L 120 40 Z" fill="#9C5A34" opacity="0.9"/>
+  <line x1="200" y1="120" x2="200" y2="460" stroke="#9C5A34" stroke-width="2" opacity="0.5"/>
+  <circle cx="200" cy="170" r="4" fill="#9C5A34"/>
+  <circle cx="200" cy="230" r="4" fill="#9C5A34"/>
+  <circle cx="200" cy="290" r="4" fill="#9C5A34"/>
+  <circle cx="200" cy="350" r="4" fill="#9C5A34"/>
+  <g stroke="#9C5A34" stroke-width="1" opacity="0.25">
+    <line x1="40" y1="150" x2="360" y2="150"/>
+    <line x1="40" y1="250" x2="360" y2="250"/>
+    <line x1="40" y1="350" x2="360" y2="350"/>
+    <line x1="40" y1="450" x2="360" y2="450"/>
+  </g>
+  <text x="40" y="470" font-family="Georgia, serif" font-size="22" fill="#9C5A34" opacity="0.8">The Quiet Rebel</text>
+</svg>

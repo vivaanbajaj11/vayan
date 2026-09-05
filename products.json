@@ -1,0 +1,70 @@
+{
+  "products": [
+    {
+      "id": "shirt-01",
+      "name": "The Confident Classic",
+      "price": 78,
+      "fabric": "Egyptian cotton, oxford weave",
+      "personality": "Steady, sharp, never in a hurry to prove it.",
+      "description": "A crisp navy oxford built for the room where the decisions get made. Hand-finished collar, mother-of-pearl buttons.",
+      "stock": 12,
+      "image": "images/shirt-01.svg",
+      "stripeLink": "https://buy.stripe.com/REPLACE_ME_01"
+    },
+    {
+      "id": "shirt-02",
+      "name": "The Quiet Rebel",
+      "price": 82,
+      "fabric": "Brushed cotton twill",
+      "personality": "Rules followed on their own terms.",
+      "description": "Charcoal base, rust-thread stitching along the inside seam only you know about. Slightly relaxed through the shoulder.",
+      "stock": 8,
+      "image": "images/shirt-02.svg",
+      "stripeLink": "https://buy.stripe.com/REPLACE_ME_02"
+    },
+    {
+      "id": "shirt-03",
+      "name": "The Warm Storyteller",
+      "price": 74,
+      "fabric": "Washed linen-cotton blend",
+      "personality": "Every scar and crease has a story attached.",
+      "description": "Terracotta linen that softens with every wash. Made to be worn until it belongs to you.",
+      "stock": 15,
+      "image": "images/shirt-03.svg",
+      "stripeLink": "https://buy.stripe.com/REPLACE_ME_03"
+    },
+    {
+      "id": "shirt-04",
+      "name": "The Modern Minimalist",
+      "price": 76,
+      "fabric": "Fine poplin",
+      "personality": "Says less, means more.",
+      "description": "Bone poplin, no logo, no extra stitching. Just the cut, the fabric, and the fit.",
+      "stock": 10,
+      "image": "images/shirt-04.svg",
+      "stripeLink": "https://buy.stripe.com/REPLACE_ME_04"
+    },
+    {
+      "id": "shirt-05",
+      "name": "The Bold Original",
+      "price": 84,
+      "fabric": "Heavyweight cotton",
+      "personality": "Walks in first, leaves last.",
+      "description": "Deep forest cotton with real weight to it. Built for someone who doesn't dress to blend in.",
+      "stock": 6,
+      "image": "images/shirt-05.svg",
+      "stripeLink": "https://buy.stripe.com/REPLACE_ME_05"
+    },
+    {
+      "id": "shirt-06",
+      "name": "The Old Soul",
+      "price": 80,
+      "fabric": "Vintage-finish cotton",
+      "personality": "Carries a little of the past into every room.",
+      "description": "Deep burgundy with a hand-finished patina. Feels like it's already been loved once.",
+      "stock": 9,
+      "image": "images/shirt-06.svg",
+      "stripeLink": "https://buy.stripe.com/REPLACE_ME_06"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "shirt",
+      "price": 50,
+      "fabric": "cotton",
+      "personality": "shirt",
+      "description": "giza cotton printed shirt",
+      "stock": 20,
+      "image": "images/shirt-01.svg"
+    }
+  ]
+}

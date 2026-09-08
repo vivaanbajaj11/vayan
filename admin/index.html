@@ -1,74 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vayan — Handmade Formal Shirts</title>
-<meta name="description" content="Handmade formal shirts, each cut for a different personality. Built to last.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="images/logo/favicon.png">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Manager — Vayan</title>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="header-row">
-    <a href="/" class="brand-logo" aria-label="Vayan home">
-      <img src="images/logo/vayan-mark-gold.png" alt="" class="brand-mark">
-      <img src="images/logo/vayan-wordmark-gold.png" alt="Vayan" class="brand-wordmark">
-    </a>
-    <button class="cart-toggle" id="cartToggle" aria-haspopup="true" aria-expanded="false">
-      Cart <span class="cart-count" id="cartCount">0</span>
-    </button>
-  </div>
-</header>
-
-<section class="hero">
-  <div>
-    <h1>A shirt should fit your character, not just your collar size.</h1>
-    <p class="lede">Every shirt here is handmade, one at a time, and built to hold up to years of wear — not just one wash. Pick the one that fits who you are, not who you're supposed to be.</p>
-    <a href="#shop" class="hero-cta">Find your shirt</a>
-  </div>
-  <div class="hero-swatch">
-    <img src="images/shirt-01.svg" alt="A folded navy formal shirt with hand-finished stitching">
-  </div>
-</section>
-
-<div class="section-heading" id="shop">
-  <h2>The current run</h2>
-  <p>Small batches, made by hand. When a shirt sells out, it's gone until the next run.</p>
-</div>
-
-<div class="product-grid" id="productGrid">
-  <!-- product cards injected by js/main.js -->
-</div>
-
-<footer>
-  <img src="images/logo/vayan-wordmark-maroon.png" alt="Vayan" class="footer-wordmark">
-  <p>Bespoke tailoring, handmade. Questions about an order? Email us anytime.</p>
-</footer>
-
-<div class="backdrop" id="backdrop"></div>
-<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
-  <div class="cart-drawer-header">
-    <h2>Your cart</h2>
-    <button class="cart-close" id="cartClose" aria-label="Close cart">&times;</button>
-  </div>
-  <div class="cart-items" id="cartItems">
-    <p class="cart-empty">Your cart is empty.</p>
-  </div>
-  <div class="cart-footer">
-    <div class="cart-total">
-      <span>Total</span>
-      <span id="cartTotal">$0</span>
-    </div>
-    <button class="checkout-btn" id="checkoutBtn">Checkout</button>
-    <p class="checkout-note">Secure checkout via Stripe. Shipping calculated at checkout.</p>
-  </div>
-</aside>
-
-<script src="js/cart.js"></script>
-<script src="js/main.js"></script>
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
 </html>

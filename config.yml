@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: YOUR_USERNAME/YOUR_REPO
+  repo: vivaanbajaj11/vayan
   branch: main
 
 # This makes uploaded product photos land in /images and be referenced

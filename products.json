@@ -1,3 +1,14 @@
 {
-  "products": []
+  "products": [
+    {
+      "image": "uploads/whatsapp-image-2026-09-09-at-15.48.38-1-.jpeg",
+      "stock": 8,
+      "id": "nightscape",
+      "name": "Nightscape Stripped",
+      "price": 55,
+      "fabric": "Giza Cotton",
+      "personality": "Bold.Comfortable.Bespoke.",
+      "description": "Comfort that is unmatched, with style that blends into the night crisply, boldly and seamlessly. "
+    }
+  ]
 }

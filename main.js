@@ -6,11 +6,46 @@ async function loadProducts() {
     const data = await res.json();
     PRODUCTS = data.products || [];
     renderProducts();
+    renderMarquee();
+    setupScrollReveal();
   } catch (e) {
     console.error('Could not load products', e);
     document.getElementById('productGrid').innerHTML =
       '<p style="padding:24px;color:#6B7280;">Could not load the shop right now. Please refresh.</p>';
   }
+}
+
+function renderMarquee() {
+  const track = document.getElementById('marqueeTrack');
+  if (!track || PRODUCTS.length === 0) return;
+  // Duplicate the list once so translateX(-50%) loops seamlessly with no visible seam.
+  const doubled = [...PRODUCTS, ...PRODUCTS];
+  track.innerHTML = doubled.map((p) => `
+    <div class="marquee-item">
+      <div class="frame">
+        <img src="${p.image}" alt="${escapeHtml(p.name)}" loading="lazy">
+      </div>
+      <div class="name">${escapeHtml(p.name)}</div>
+    </div>
+  `).join('');
+}
+
+function setupScrollReveal() {
+  const cards = document.querySelectorAll('.product-card');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    cards.forEach((c) => c.classList.add('in-view'));
+    return;
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  cards.forEach((c) => observer.observe(c));
 }
 
 function renderProducts() {
@@ -159,3 +194,37 @@ checkoutBtn.addEventListener('click', async () => {
 
 loadProducts();
 renderCart();
+
+// --- Mobile nav toggle ---
+const navToggle = document.getElementById('navToggle');
+const mainNav = document.getElementById('mainNav');
+if (navToggle && mainNav) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = mainNav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  mainNav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      mainNav.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
+// --- Footer year ---
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+// --- Newsletter form (front-end only — no backend wired up yet) ---
+const newsletterForm = document.getElementById('newsletterForm');
+if (newsletterForm) {
+  newsletterForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const note = document.getElementById('newsletterNote');
+    const email = document.getElementById('newsletterEmail').value;
+    if (note) {
+      note.textContent = `Thanks — we'll email ${email} when the next run drops.`;
+    }
+    newsletterForm.reset();
+  });
+}

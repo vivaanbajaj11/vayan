@@ -18,6 +18,15 @@
       <img src="vayan-mark-gold.png" alt="" class="brand-mark">
       <img src="vayan-wordmark-gold.png" alt="Vayan" class="brand-wordmark">
     </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#shop">Shop</a>
+      <a href="#craft">Our Craft</a>
+      <a href="#why">Why Vayan</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
     <button class="cart-toggle" id="cartToggle" aria-haspopup="true" aria-expanded="false">
       Cart <span class="cart-count" id="cartCount">0</span>
     </button>
@@ -37,6 +46,21 @@
   </div>
 </section>
 
+<svg class="wave-divider" viewBox="0 0 1200 44" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0,22 C150,44 350,0 600,18 C850,36 1050,4 1200,22 L1200,44 L0,44 Z"></path>
+</svg>
+
+<section class="marquee-section" aria-label="Browse the collection">
+  <p class="marquee-heading">The full collection</p>
+  <div class="marquee-track" id="marqueeTrack">
+    <!-- populated by main.js -->
+  </div>
+</section>
+
+<svg class="wave-divider flip" viewBox="0 0 1200 44" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0,22 C150,44 350,0 600,18 C850,36 1050,4 1200,22 L1200,44 L0,44 Z"></path>
+</svg>
+
 <div class="section-heading" id="shop">
   <div class="eyebrow"><span class="diamond"></span><span>Handmade, in small batches</span></div>
   <h2>The current run</h2>
@@ -47,9 +71,105 @@
   <!-- product cards injected by main.js -->
 </div>
 
-<footer>
-  <img src="vayan-wordmark-maroon.png" alt="Vayan" class="footer-wordmark">
-  <p>Bespoke tailoring, handmade. Questions about an order? Email us anytime.</p>
+<section class="value-props" id="why">
+  <div class="value-prop">
+    <div class="icon">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 38 L34 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="36" cy="12" r="3.2" stroke="currentColor" stroke-width="2"/>
+        <path d="M10 38 C8 40 8 42 10 42 C12 42 14 40 12 38" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h3>Hand-stitched, not mass-produced</h3>
+    <p>Every seam is sewn by one tailor, start to finish — never a factory line.</p>
+  </div>
+  <div class="value-prop">
+    <div class="icon">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="24" cy="24" r="15" stroke="currentColor" stroke-width="2"/>
+        <path d="M24 15 L24 24 L30 28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h3>Built for years, not seasons</h3>
+    <p>Heavier fabrics and reinforced seams so it holds up to real, repeated wear.</p>
+  </div>
+  <div class="value-prop">
+    <div class="icon">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24 8 L28 20 L40 20 L30 27 L34 39 L24 31 L14 39 L18 27 L8 20 L20 20 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h3>Cut for a personality, not a mold</h3>
+    <p>Six distinct fits, each designed around a different kind of person.</p>
+  </div>
+</section>
+
+<section class="craft-section" id="craft">
+  <div class="craft-inner">
+    <div class="craft-frame">
+      <img src="shirt-02.svg" alt="Close detail of hand-finished stitching on a Vayan shirt">
+    </div>
+    <div class="craft-text">
+      <div class="eyebrow"><span class="diamond"></span><span>Our craft</span></div>
+      <h2>Made the slow way, on purpose.</h2>
+      <p>Every Vayan shirt starts as a single bolt of fabric, cut by hand to one tailor's own pattern. No factory line, no batch of a thousand identical pieces — just one shirt, then the next.</p>
+      <p>It takes longer. It also means the collar sits right, the stitching holds after the fiftieth wash, and no two runs are ever quite the same.</p>
+      <div class="craft-steps">
+        <div class="craft-step"><span class="num">01</span><span class="label">Cut by hand</span></div>
+        <div class="craft-step"><span class="num">02</span><span class="label">Stitched, one at a time</span></div>
+        <div class="craft-step"><span class="num">03</span><span class="label">Finished &amp; pressed</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonial">
+  <div class="mark">&ldquo;</div>
+  <blockquote>Three years in and the collar still sits exactly the way it did on day one. I've stopped buying shirts anywhere else.</blockquote>
+  — A Vayan customer
+</section>
+
+<section class="newsletter">
+  <h2>Get word of the next run</h2>
+  <p>Small batches sell out. We'll let you know before they do.</p>
+  <form class="newsletter-form" id="newsletterForm">
+    <input type="email" id="newsletterEmail" placeholder="you@email.com" required aria-label="Email address">
+    <button type="submit">Notify me</button>
+  </form>
+  <p class="newsletter-note" id="newsletterNote"></p>
+</section>
+
+<footer id="contact">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <img src="vayan-wordmark-maroon.png" alt="Vayan" class="footer-wordmark">
+      <p>Bespoke, handmade formal shirts. Cut for a personality, built to last.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="#shop">The current run</a></li>
+        <li><a href="#craft">Our craft</a></li>
+        <li><a href="#why">Why Vayan</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="mailto:hello@vayan.com">Email us</a></li>
+        <li><a href="#">Sizing guide</a></li>
+        <li><a href="#">Care instructions</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Visit</h4>
+      <p>Questions about an order? Email us anytime — we reply within a day.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="year"></span> Vayan. All rights reserved.</span>
+    <span>Bespoke tailoring, handmade.</span>
+  </div>
 </footer>
 
 <div class="backdrop" id="backdrop"></div>

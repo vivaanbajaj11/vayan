@@ -3,13 +3,10 @@ backend:
   repo: vivaanbajaj11/vayan
   branch: main
 
-# This makes uploaded product photos land in /images and be referenced
-# with a path the site can load directly.
-media_folder: "images"
-public_folder: "images"
+# Uploaded product photos land at the repo root, matching the flat site structure.
+media_folder: ""
+public_folder: "/"
 
-# "Editorial workflow" adds a draft/review step before changes go live.
-# Remove this line if you want edits to publish to the live site instantly.
 publish_mode: editorial_workflow
 
 collections:
@@ -18,7 +15,7 @@ collections:
     files:
       - name: "catalog"
         label: "Product Catalog"
-        file: "data/products.json"
+        file: "products.json"
         fields:
           - label: "Products"
             name: "products"

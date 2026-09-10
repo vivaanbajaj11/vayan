@@ -401,7 +401,7 @@ checkoutBtn.addEventListener('click', async () => {
   checkoutBtn.textContent = 'Redirecting…';
 
   try {
-    const res = await fetch('/.netlify/functions/create-checkout-session', {
+    const res = await fetch('/create-checkout-session', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ items }),
@@ -414,7 +414,7 @@ checkoutBtn.addEventListener('click', async () => {
     }
   } catch (e) {
     console.error(e);
-    alert('Checkout is not set up yet. Add your Stripe secret key in Netlify environment variables to enable it.');
+    alert('Checkout is not set up yet. Add your Stripe secret key in your hosting provider\'s environment variables to enable it.');
     checkoutBtn.disabled = false;
     checkoutBtn.textContent = 'Checkout';
   }
@@ -447,59 +447,4 @@ if (minPriceInput && maxPriceInput) {
 }
 
 const clearFiltersBtn = document.getElementById('clearFilters');
-if (clearFiltersBtn) {
-  clearFiltersBtn.addEventListener('click', () => {
-    filters.search = '';
-    filters.category = 'all';
-    filters.color = '';
-    filters.minPrice = null;
-    filters.maxPrice = null;
-    if (searchInput) searchInput.value = '';
-    if (minPriceInput) minPriceInput.value = '';
-    if (maxPriceInput) maxPriceInput.value = '';
-    const colorFilter = document.getElementById('colorFilter');
-    if (colorFilter) colorFilter.value = '';
-    document.querySelectorAll('#categoryPills .pill').forEach((b) => {
-      b.classList.toggle('active', b.dataset.id === 'all');
-    });
-    setMarqueeTheme('all');
-    applyFilters();
-  });
-}
-
-loadAll();
-renderCart();
-
-// --- Mobile nav toggle ---
-const navToggle = document.getElementById('navToggle');
-const mainNav = document.getElementById('mainNav');
-if (navToggle && mainNav) {
-  navToggle.addEventListener('click', () => {
-    const isOpen = mainNav.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  });
-  mainNav.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      mainNav.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
-    });
-  });
-}
-
-// --- Footer year ---
-const yearEl = document.getElementById('year');
-if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-// --- Newsletter form (front-end only — no backend wired up yet) ---
-const newsletterForm = document.getElementById('newsletterForm');
-if (newsletterForm) {
-  newsletterForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const note = document.getElementById('newsletterNote');
-    const email = document.getElementById('newsletterEmail').value;
-    if (note) {
-      note.textContent = `Thanks — we'll email ${email} when the next run drops.`;
-    }
-    newsletterForm.reset();
-  });
-}
+if

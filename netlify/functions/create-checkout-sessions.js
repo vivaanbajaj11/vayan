@@ -1,7 +1,7 @@
 // Netlify serverless function: creates a Stripe Checkout Session for the cart.
 // Requires the STRIPE_SECRET_KEY environment variable to be set in Netlify.
 //
-// This checks requested quantities against products.json at request time,
+// This checks requested quantities against data/products.json at request time,
 // so someone can't check out with more stock than you have listed. Note: this
 // is a "soft" check based on the committed JSON file, not a live database —
 // if two people buy the last item at the exact same moment, Stripe itself
@@ -51,8 +51,8 @@ exports.handler = async (event) => {
       }
       line_items.push({
         price_data: {
-          currency: 'usd',
-          product_data: { name: product.name },
+          currency: 'inr',
+          product_data: { name: item.size ? `${product.name} (Size ${item.size})` : product.name },
           unit_amount: Math.round(product.price * 100),
         },
         quantity: item.qty,
@@ -64,7 +64,7 @@ exports.handler = async (event) => {
     const session = await stripe.checkout.sessions.create({
       mode: 'payment',
       line_items,
-      shipping_address_collection: { allowed_countries: ['US', 'CA', 'GB', 'AU', 'IN'] },
+      shipping_address_collection: { allowed_countries: ['IN', 'US', 'CA', 'GB', 'AU'] },
       success_url: `${siteUrl}/success.html`,
       cancel_url: `${siteUrl}/`,
     });

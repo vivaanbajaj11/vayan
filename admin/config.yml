@@ -1,9 +1,13 @@
+
 backend:
   name: github
   repo: vivaanbajaj11/vayan
   branch: main
 
-# Uploaded product photos land at the repo root, matching the flat site structure.
+# Shows your logo in the admin panel instead of the generic default.
+logo_url: "vayan-mark-maroon.png"
+
+# Uploaded product photos land in an /uploads folder.
 media_folder: "uploads"
 public_folder: "uploads"
 
@@ -11,7 +15,8 @@ publish_mode: editorial_workflow
 
 collections:
   - name: "products"
-    label: "Shop / Products"
+    label: "🧵 Shop / Products"
+    description: "Every shirt customers can see and buy on the site."
     files:
       - name: "catalog"
         label: "Product Catalog"
@@ -20,14 +25,51 @@ collections:
           - label: "Products"
             name: "products"
             widget: "list"
-            summary: "{{fields.name}} — ${{fields.price}}"
+            summary: "{{fields.name}} — ₹{{fields.price}}"
             fields:
-              - { label: "ID (no spaces, must be unique)", name: "id", widget: "string" }
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Price (USD)", name: "price", widget: "number", value_type: "float" }
+              - { label: "Internal ID (no spaces, must be unique, never change once live)", name: "id", widget: "string", hint: "e.g. shirt-07. Used internally to track this product — don't reuse an ID." }
+              - { label: "Shirt Name", name: "name", widget: "string" }
+              - { label: "Price (in ₹ INR)", name: "price", widget: "number", value_type: "float", hint: "Just the number, e.g. 2999 — the ₹ symbol is added automatically." }
+              - label: "Collection"
+                name: "category"
+                widget: "string"
+                hint: "Type the exact 'ID' of a collection from the Collections section below (e.g. classic, rebel, heritage) to group this shirt under it. Add a new collection there first if you want a new one."
+              - { label: "Color", name: "color", widget: "string", hint: "e.g. Navy, Charcoal, Burgundy — shown as a filter option on the shop page." }
+              - label: "Available Sizes"
+                name: "sizes"
+                widget: "select"
+                multiple: true
+                options: ["XS", "S", "M", "L", "XL", "XXL"]
+                hint: "Tick every size currently available for this shirt."
+              - label: "Photos (1 to 5)"
+                name: "images"
+                widget: "list"
+                minimize_collapsed: true
+                summary: "Photo {{index}}"
+                min: 1
+                max: 5
+                field: { label: "Photo", name: "url", widget: "image" }
+                hint: "The first photo is used as the main thumbnail everywhere on the site. Add up to 5 — customers can scroll through all of them."
+              - { label: "One-line personality tagline", name: "personality", widget: "string", hint: "Shown in italics on the product card and in the sliding collection strip." }
+              - { label: "Full Description", name: "description", widget: "text" }
               - { label: "Fabric", name: "fabric", widget: "string" }
-              - { label: "Personality tagline", name: "personality", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
-              - { label: "Stock (how many you have made)", name: "stock", widget: "number", value_type: "int" }
-              - { label: "Photo", name: "image", widget: "image" }
-              - { label: "Stripe Payment Link (optional, used only if you skip the cart)", name: "stripeLink", widget: "string", required: false }
+              - { label: "Stock (how many you currently have made)", name: "stock", widget: "number", value_type: "int", hint: "Shows 'Only X left' or 'Sold out' automatically based on this number." }
+              - { label: "Stripe Payment Link (optional, not used by the cart — safe to leave blank)", name: "stripeLink", widget: "string", required: false, collapsed: true }
+
+  - name: "collections"
+    label: "🏷️ Collections"
+    description: "Define the sub-categories shirts can belong to (like Adidas has Predator, Copa, etc). Each one gets its own color theme on the site."
+    files:
+      - name: "catalog"
+        label: "Collections List"
+        file: "collections.json"
+        fields:
+          - label: "Collections"
+            name: "collections"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "ID (short, lowercase, no spaces — e.g. classic)", name: "id", widget: "string", hint: "Type this exact word into a product's 'Collection' field to add it to this group." }
+              - { label: "Display Name", name: "name", widget: "string", hint: "Shown to customers, e.g. 'Classic Collection'." }
+              - { label: "Short Tagline", name: "tagline", widget: "string" }
+              - { label: "Theme Color", name: "themeColor", widget: "color", hint: "This color is used for the sliding collection strip when a customer browses this collection." }

@@ -1,0 +1,22 @@
+{
+  "collections": [
+    {
+      "id": "classic",
+      "name": "Classic Collection",
+      "tagline": "Timeless cuts for the boardroom and beyond.",
+      "themeColor": "#570C16"
+    },
+    {
+      "id": "rebel",
+      "name": "Rebel Collection",
+      "tagline": "Sharp tailoring, with a little defiance stitched in.",
+      "themeColor": "#1F3B4D"
+    },
+    {
+      "id": "heritage",
+      "name": "Heritage Collection",
+      "tagline": "Old-world fabrics, given new life.",
+      "themeColor": "#6B3F14"
+    }
+  ]
+}

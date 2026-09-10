@@ -1,14 +1,106 @@
 {
   "products": [
     {
-      "image": "uploads/whatsapp-image-2026-09-09-at-15.48.38-1-.jpeg",
+      "id": "shirt-01",
+      "name": "The Confident Classic",
+      "price": 2999,
+      "category": "classic",
+      "color": "Navy",
+      "sizes": ["S", "M", "L", "XL"],
+      "fabric": "Egyptian cotton, oxford weave",
+      "personality": "Steady, sharp, never in a hurry to prove it.",
+      "description": "A crisp navy oxford built for the room where the decisions get made. Hand-finished collar, mother-of-pearl buttons.",
+      "stock": 12,
+      "images": [
+        { "url": "shirt-01.svg" },
+        { "url": "shirt-01.svg" }
+      ],
+      "stripeLink": "https://buy.stripe.com/REPLACE_ME_01"
+    },
+    {
+      "id": "shirt-02",
+      "name": "The Quiet Rebel",
+      "price": 3199,
+      "category": "rebel",
+      "color": "Charcoal",
+      "sizes": ["XS", "S", "M", "L"],
+      "fabric": "Brushed cotton twill",
+      "personality": "Rules followed on their own terms.",
+      "description": "Charcoal base, rust-thread stitching along the inside seam only you know about. Slightly relaxed through the shoulder.",
       "stock": 8,
-      "id": "nightscape",
-      "name": "Nightscape Stripped",
-      "price": 55,
-      "fabric": "Giza Cotton",
-      "personality": "Bold.Comfortable.Bespoke.",
-      "description": "Comfort that is unmatched, with style that blends into the night crisply, boldly and seamlessly. "
+      "images": [
+        { "url": "shirt-02.svg" },
+        { "url": "shirt-02.svg" }
+      ],
+      "stripeLink": "https://buy.stripe.com/REPLACE_ME_02"
+    },
+    {
+      "id": "shirt-03",
+      "name": "The Warm Storyteller",
+      "price": 2799,
+      "category": "heritage",
+      "color": "Terracotta",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "fabric": "Washed linen-cotton blend",
+      "personality": "Every scar and crease has a story attached.",
+      "description": "Terracotta linen that softens with every wash. Made to be worn until it belongs to you.",
+      "stock": 15,
+      "images": [
+        { "url": "shirt-03.svg" },
+        { "url": "shirt-03.svg" }
+      ],
+      "stripeLink": "https://buy.stripe.com/REPLACE_ME_03"
+    },
+    {
+      "id": "shirt-04",
+      "name": "The Modern Minimalist",
+      "price": 2899,
+      "category": "classic",
+      "color": "Bone",
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "fabric": "Fine poplin",
+      "personality": "Says less, means more.",
+      "description": "Bone poplin, no logo, no extra stitching. Just the cut, the fabric, and the fit.",
+      "stock": 10,
+      "images": [
+        { "url": "shirt-04.svg" },
+        { "url": "shirt-04.svg" }
+      ],
+      "stripeLink": "https://buy.stripe.com/REPLACE_ME_04"
+    },
+    {
+      "id": "shirt-05",
+      "name": "The Bold Original",
+      "price": 3299,
+      "category": "rebel",
+      "color": "Forest Green",
+      "sizes": ["M", "L", "XL", "XXL"],
+      "fabric": "Heavyweight cotton",
+      "personality": "Walks in first, leaves last.",
+      "description": "Deep forest cotton with real weight to it. Built for someone who doesn't dress to blend in.",
+      "stock": 6,
+      "images": [
+        { "url": "shirt-05.svg" },
+        { "url": "shirt-05.svg" }
+      ],
+      "stripeLink": "https://buy.stripe.com/REPLACE_ME_05"
+    },
+    {
+      "id": "shirt-06",
+      "name": "The Old Soul",
+      "price": 3099,
+      "category": "heritage",
+      "color": "Burgundy",
+      "sizes": ["S", "M", "L", "XL"],
+      "fabric": "Vintage-finish cotton",
+      "personality": "Carries a little of the past into every room.",
+      "description": "Deep burgundy with a hand-finished patina. Feels like it's already been loved once.",
+      "stock": 9,
+      "images": [
+        { "url": "shirt-06.svg" },
+        { "url": "shirt-06.svg" }
+      ],
+      "stripeLink": "https://buy.stripe.com/REPLACE_ME_06"
     }
   ]
 }

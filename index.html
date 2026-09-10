@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,10 +62,34 @@
   <path d="M0,22 C150,44 350,0 600,18 C850,36 1050,4 1200,22 L1200,44 L0,44 Z"></path>
 </svg>
 
+<section class="featured-banner" id="featuredBanner">
+  <!-- populated by main.js -->
+</section>
+
 <div class="section-heading" id="shop">
   <div class="eyebrow"><span class="diamond"></span><span>Handmade, in small batches</span></div>
   <h2>The current run</h2>
   <p>Small batches, made by hand. When a shirt sells out, it's gone until the next run.</p>
+</div>
+
+<div class="shop-controls">
+  <div class="pills" id="categoryPills">
+    <!-- populated by main.js -->
+  </div>
+  <div class="filters-row">
+    <input type="text" id="searchInput" class="search-input" placeholder="Search shirts…" aria-label="Search shirts">
+    <div class="price-filter">
+      <span>₹</span>
+      <input type="number" id="minPrice" placeholder="Min" aria-label="Minimum price" min="0">
+      <span class="dash">–</span>
+      <span>₹</span>
+      <input type="number" id="maxPrice" placeholder="Max" aria-label="Maximum price" min="0">
+    </div>
+    <select id="colorFilter" class="color-select" aria-label="Filter by color">
+      <option value="">All colors</option>
+    </select>
+    <button type="button" id="clearFilters" class="clear-filters-btn">Clear</button>
+  </div>
 </div>
 
 <div class="product-grid" id="productGrid">
@@ -126,7 +151,7 @@
 <section class="testimonial">
   <div class="mark">&ldquo;</div>
   <blockquote>Three years in and the collar still sits exactly the way it did on day one. I've stopped buying shirts anywhere else.</blockquote>
-  — A Vayan customer
+  <cite>— A Vayan customer</cite>
 </section>
 
 <section class="newsletter">
@@ -184,12 +209,40 @@
   <div class="cart-footer">
     <div class="cart-total">
       <span>Total</span>
-      <span id="cartTotal">$0</span>
+      <span id="cartTotal">₹0</span>
     </div>
     <button class="checkout-btn" id="checkoutBtn">Checkout</button>
     <p class="checkout-note">Secure checkout via Stripe. Shipping calculated at checkout.</p>
   </div>
 </aside>
+
+<div class="modal-backdrop" id="modalBackdrop"></div>
+<div class="product-modal" id="productModal" role="dialog" aria-modal="true" aria-label="Product details">
+  <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+  <div class="modal-body">
+    <div class="modal-gallery">
+      <div class="gallery-viewport">
+        <div class="gallery-track" id="galleryTrack"><!-- images injected by main.js --></div>
+      </div>
+      <button class="gallery-nav prev" id="galleryPrev" aria-label="Previous photo">&#8249;</button>
+      <button class="gallery-nav next" id="galleryNext" aria-label="Next photo">&#8250;</button>
+      <div class="gallery-dots" id="galleryDots"></div>
+    </div>
+    <div class="modal-info">
+      <div class="eyebrow" id="modalCategory"></div>
+      <h2 id="modalName"></h2>
+      <p class="personality" id="modalPersonality"></p>
+      <p class="modal-price" id="modalPrice"></p>
+      <p class="modal-desc" id="modalDesc"></p>
+      <p class="modal-fabric" id="modalFabric"></p>
+      <div class="size-selector">
+        <span class="size-label">Size</span>
+        <div class="size-options" id="sizeOptions"><!-- size buttons injected by main.js --></div>
+      </div>
+      <button class="add-btn modal-add-btn" id="modalAddBtn" disabled>Select a size</button>
+    </div>
+  </div>
+</div>
 
 <script src="cart.js"></script>
 <script src="main.js"></script>

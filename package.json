@@ -1,9 +1,0 @@
-{
-  "name": "vayan",
-  "version": "1.0.0",
-  "private": true,
-  "description": "Vayan — handmade formal shirts storefront",
-  "dependencies": {
-    "stripe": "^16.0.0"
-  }
-}

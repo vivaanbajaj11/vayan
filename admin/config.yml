@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: YOUR_USERNAME/YOUR_REPO
+  repo: vivaanbajaj11/vayan
   branch: main
   base_url: https://vayan.vivaanbajaj11.pages.dev
   auth_endpoint: auth

@@ -1,8 +1,9 @@
-
 backend:
   name: github
-  repo: vivaanbajaj11/vayan
+  repo: YOUR_USERNAME/YOUR_REPO
   branch: main
+  base_url: https://vayan.vivaanbajaj11.pages.dev
+  auth_endpoint: auth
 
 # Shows your logo in the admin panel instead of the generic default.
 logo_url: "vayan-mark-maroon.png"

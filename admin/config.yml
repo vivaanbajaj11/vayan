@@ -2,7 +2,7 @@ backend:
   name: github
   repo: vivaanbajaj11/vayan
   branch: main
-  base_url: https://vayan.vivaanbajaj11.pages.dev
+  base_url: https://vayan.vivaanbajaj11.workers.dev
   auth_endpoint: auth
 
 # Shows your logo in the admin panel instead of the generic default.

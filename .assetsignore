@@ -1,7 +1,0 @@
-worker.js
-wrangler.jsonc
-node_modules
-.git
-functions
-netlify
-netlify.toml
